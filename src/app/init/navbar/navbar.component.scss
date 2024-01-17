@@ -1,0 +1,30 @@
+.spacer {
+    flex: 1; /* This will make the spacer take up all available space */
+  }
+
+  .mat-toolbar {
+    // color: #bdbdbd; /* Lighter gray text */
+  
+    .mat-toolbar-row {
+      padding-right: 24px; /* Increased padding */
+     
+      button {
+        border: none;
+        color: #757575; /* Darker gray text */
+        font-size: 25px; /* Increased font size */
+        padding: 10px 25px; /* Added padding */
+        cursor: pointer;
+        background-color: transparent;
+  
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1); /* Light gray hover background */
+          color: #e0e0e0; /* Lighter gray text on hover */
+        }
+      }
+  
+      .mat-icon-button {
+        margin-right: 12px; /* Adjusted spacing */
+      }
+    }
+  }
+ 

@@ -1,0 +1,13 @@
+<h2 mat-dialog-title [ngClass]="{ danger: data.isDanger }">{{ data.title }}</h2>
+<mat-dialog-content>{{ data.message }}</mat-dialog-content>
+<mat-dialog-actions class="">
+  <button mat-button [mat-dialog-close]="false">Cancel</button>
+  <button
+    mat-button
+    [mat-dialog-close]="true"
+    cdkFocusInitial
+    [ngClass]="{ danger: data.isDanger }"
+  >
+    OK
+  </button>
+</mat-dialog-actions>
