@@ -70,12 +70,18 @@ export class TableComponent implements OnInit {
   openAddRowModal() {
     const dialogRef = this.dialog.open(AddModalComponent, {
       data: { rows: this.rows },
+      disableClose: true, // Prevent closing modal on outside click or pressing Escape key
     });
 
-    dialogRef.afterClosed().subscribe((newRow: any) => {
+    dialogRef.componentInstance.saveRow.subscribe((newRow: any) => {
       if (newRow) {
         this.addRow(newRow);
+        dialogRef.close(); // Close the modal after adding a new row
       }
+    });
+
+    dialogRef.componentInstance.cancel.subscribe(() => {
+      dialogRef.close(); // Close the modal when cancel is triggered
     });
   }
 

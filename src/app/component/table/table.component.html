@@ -11,89 +11,93 @@
       <a>New</a>
     </button>
   </div>
+  <div class="table-cnt">
 
-  <ngx-datatable
-    id="example"
-    class="material table-cnt "
-    [rows]="filteredRows"
-    [columns]="columns"
-    [columnMode]="ColumnMode.force"
-    
-    [sorts]="[{ prop: 'ID', dir: 'asc' }]"
-    [headerHeight]="60"
-    [footerHeight]="90"
-    [rowHeight]="50"
-    [limit]="12"
-  >
-    <ngx-datatable-column name="ID">
-      <ng-template let-column="column" ngx-datatable-header-template>
-        ID{{ column.id }}
-      </ng-template>
-      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-        <strong>{{ value }}</strong>
-      </ng-template>
-    </ngx-datatable-column>
-    <ngx-datatable-column name="Name">
-      <ng-template let-column="column" ngx-datatable-header-template>
-        {{ column.name }}
-      </ng-template>
-      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-        <ng-container *ngIf="!row.editing; else editField">
-          {{ value }}
-        </ng-container>
-        <ng-template #editField>
-          <input type="text" [formControl]="row.form.controls['name']" />
-<!--           <button (click)="saveEdit(row)">Save</button>
-          <button (click)="cancelEdit(row)">Cancel</button> -->
+    <ngx-datatable
+      id="example"
+      class="material "
+      [rows]="filteredRows"
+      [columns]="columns"
+      [columnMode]="ColumnMode.force"
+      
+      [sorts]="[{ prop: 'ID', dir: 'asc' }]"
+      [headerHeight]="45"
+      [footerHeight]="40"
+      [rowHeight]="50"
+      [limit]="12"
+  
+    >
+      <ngx-datatable-column name="ID">
+        <ng-template let-column="column" ngx-datatable-header-template>
+          ID{{ column.id }}
         </ng-template>
-      </ng-template>
-    </ngx-datatable-column>
-    <ngx-datatable-column name="Gender">
-      <ng-template let-column="column" ngx-datatable-header-template>
-        {{ column.name }}
-      </ng-template>
-      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-        <ng-container *ngIf="!row.editing; else editField">
-          {{ value }}
-        </ng-container>
-        <ng-template #editField>
-          <input type="text" [formControl]="row.form.controls['gender']" />
-       <!--    <button (click)="saveEdit(row)">Save</button>
-          <button (click)="cancelEdit(row)">Cancel</button> -->
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <strong>{{ value }}</strong>
         </ng-template>
-      </ng-template>
-    </ngx-datatable-column>
-    <ngx-datatable-column name="Company">
-      <ng-template let-column="column" ngx-datatable-header-template>
-        {{ column.name }}
-      </ng-template>
-      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-        <ng-container *ngIf="!row.editing; else editField">
-          {{ value }}
-        </ng-container>
-        <ng-template #editField>
-          <input type="text" [formControl]="row.form.controls['company']" />
-    <!--       <button (click)="saveEdit(row)">Save</button>
-          <button (click)="cancelEdit(row)">Cancel</button> -->
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Name">
+        <ng-template let-column="column" ngx-datatable-header-template>
+          {{ column.name }}
         </ng-template>
-      </ng-template>
-    </ngx-datatable-column>
-    <ngx-datatable-column name="Actions">
-      <ng-template let-row="row" ngx-datatable-cell-template>
-        <div class="action-buttons">
-          <button *ngIf="!row.editing" (click)="startEdit(row)" class="edit-button">
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button *ngIf="!row.editing" (click)="deleteRow(row)" class="delete-button">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </div>
-        <ng-container *ngIf="row.editing">
-          <button (click)="saveEdit(row)">Save</button>
-          <button (click)="cancelEdit(row)">Cancel</button>
-        </ng-container>
-      </ng-template>
-    </ngx-datatable-column>
-  </ngx-datatable>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <ng-container *ngIf="!row.editing; else editField">
+            {{ value }}
+          </ng-container>
+          <ng-template #editField>
+            <input type="text" [formControl]="row.form.controls['name']" />
+  <!--           <button (click)="saveEdit(row)">Save</button>
+            <button (click)="cancelEdit(row)">Cancel</button> -->
+          </ng-template>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Gender">
+        <ng-template let-column="column" ngx-datatable-header-template>
+          {{ column.name }}
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <ng-container *ngIf="!row.editing; else editField">
+            {{ value }}
+          </ng-container>
+          <ng-template #editField>
+            <input type="text" [formControl]="row.form.controls['gender']" />
+         <!--    <button (click)="saveEdit(row)">Save</button>
+            <button (click)="cancelEdit(row)">Cancel</button> -->
+          </ng-template>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Company">
+        <ng-template let-column="column" ngx-datatable-header-template>
+          {{ column.name }}
+        </ng-template>
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          <ng-container *ngIf="!row.editing; else editField">
+            {{ value }}
+          </ng-container>
+          <ng-template #editField>
+            <input type="text" [formControl]="row.form.controls['company']" />
+      <!--       <button (click)="saveEdit(row)">Save</button>
+            <button (click)="cancelEdit(row)">Cancel</button> -->
+          </ng-template>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Actions">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          <div class="action-buttons">
+            <button *ngIf="!row.editing" (click)="startEdit(row)" class="edit-button">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button *ngIf="!row.editing" (click)="deleteRow(row)" class="delete-button">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <ng-container *ngIf="row.editing">
+            <button (click)="saveEdit(row)">Save</button>
+            <button (click)="cancelEdit(row)">Cancel</button>
+          </ng-container>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+
 </div>
 

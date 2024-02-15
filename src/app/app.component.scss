@@ -1,24 +1,23 @@
-/* app.component.scss */.sidenav-container {
-  height: 100%;
-}
-
-.sidenav {
-  width: 14%;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Light shadow
-}
  
+  /* app.component.scss */
+  .sidenav-container {
+    height: 100%;
+  }
 
-  
+  .sidenav {
+    width: 14%;
+    padding: 0 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Light shadow
+  }
+
   .content {
-    padding: 30px;
-    width: 93%;
+    padding: 0 30px;
+    width: 91%;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Box shadow for content
-    margin: 30px 0 0 40px; 
+    margin: 30px 0 0 40px;
     // border: 1px solid #b4b4b4; // Add border here
-    height: 83%;
+    height: 88%;
     background-color: rgb(243, 243, 243);
   }
-  
