@@ -6,6 +6,7 @@ import { ColumnMode, SortType } from '@swimlane/ngx-datatable';
 
 import { AlertComponent } from '../alert/alert.component';
 import { AddModalComponent } from '../add-modal/add-modal.component';
+import { AddBusComponent } from '../../modals/add-bus/add-bus.component';
 
 @Component({
   selector: 'app-table',
@@ -28,7 +29,7 @@ export class TableComponent implements OnInit {
     private dialog: MatDialog,
     private formBuilder: FormBuilder,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     const currentPage = this.getCurrentPageFromPath();
@@ -37,21 +38,15 @@ export class TableComponent implements OnInit {
 
   getCurrentPageFromPath(): string {
     const url = this.router.url;
-    // if (url.includes('bus')) {
-    //   return 'bus';
-    // } else if (url.includes('bus-stations')) {
-    //   return 'bus-stations';
-    // } else if (url.includes('taxi-list')) {
-    //   return 'taxi-list';
-    // }
-    return url;
+    // Remove the leading slash and return the path segment
+    return url.substring(1);
   }
 
   openAddRowModal() {
     const currentPage = this.getCurrentPageFromPath();
 
     if (currentPage === 'bus') {
-      this.dialogRef = this.dialog.open(AddModalComponent, {
+      this.dialogRef = this.dialog.open(AddBusComponent, {
         data: { rows: this.rows },
         disableClose: true,
       });

@@ -36,6 +36,12 @@ import { TravelsComponent } from './Pages/client/travels/travels.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { MessagesComponent } from './Pages/messages/messages.component';
+import { AddBusComponent } from './modals/add-bus/add-bus.component';
+import { AddBusStationComponent } from './modals/add-bus-station/add-bus-station.component';
+import { AddBusLineComponent } from './modals/add-bus-line/add-bus-line.component';
+import { AddBusDriverComponent } from './modals/add-bus-driver/add-bus-driver.component';
+import { AddTaxiComponent } from './modals/add-taxi/add-taxi.component';
+import { AddTaxiDriverComponent } from './modals/add-taxi-driver/add-taxi-driver.component';
 
 
 @NgModule({
@@ -57,6 +63,12 @@ import { MessagesComponent } from './Pages/messages/messages.component';
     DashboardComponent,
     LoginComponent,
     MessagesComponent,
+    AddBusComponent,
+    AddBusStationComponent,
+    AddBusLineComponent,
+    AddBusDriverComponent,
+    AddTaxiComponent,
+    AddTaxiDriverComponent,
   ],
   imports: [
     BrowserModule,
