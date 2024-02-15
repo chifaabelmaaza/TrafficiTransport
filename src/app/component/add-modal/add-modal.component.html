@@ -1,13 +1,24 @@
-<h2>Add Row</h2>
-<form [formGroup]="form">
-  <label for="name">Name:</label>
-  <input type="text" id="name" formControlName="name" />
+<div class="modal-container">
+  <h2>Add Row</h2>
+  <form [formGroup]="form" class="form-box">
+    <mat-form-field appearance="fill">
+      <mat-label>Name:</mat-label>
+      <input matInput type="text" formControlName="name" />
+    </mat-form-field>
 
-  <label for="gender">Gender:</label>
-  <input type="text" id="gender" formControlName="gender" />
+    <mat-form-field appearance="fill">
+      <mat-label>Gender:</mat-label>
+      <input matInput type="text" formControlName="gender" />
+    </mat-form-field>
 
-  <label for="company">Company:</label>
-  <input type="text" id="company" formControlName="company" />
+    <mat-form-field appearance="fill">
+      <mat-label>Company:</mat-label>
+      <input matInput type="text" formControlName="company" />
+    </mat-form-field>
 
-  <button (click)="save()">Save</button>
-</form>
+    <div class="actions">
+      <button mat-raised-button  (click)="save()" class="save-button">Save</button>
+      <button mat-button (click)="cancelForm()" class="cancel-button">Cancel</button>
+    </div>
+  </form>
+</div>

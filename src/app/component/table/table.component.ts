@@ -69,7 +69,6 @@ export class TableComponent implements OnInit {
 
   openAddRowModal() {
     const dialogRef = this.dialog.open(AddModalComponent, {
-      width: '400px',
       data: { rows: this.rows },
     });
 
