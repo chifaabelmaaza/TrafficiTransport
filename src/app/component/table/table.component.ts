@@ -44,24 +44,44 @@ export class TableComponent implements OnInit {
 
   openAddRowModal() {
     const currentPage = this.getCurrentPageFromPath();
-
+  
     if (currentPage === 'bus') {
       this.dialogRef = this.dialog.open(AddBusComponent, {
         data: { rows: this.rows },
         disableClose: true,
       });
-    } else if (currentPage === 'bus-stations') {
+    } else if (currentPage === 'bus-station') {
       this.dialogRef = this.dialog.open(AddModalComponent, {
         data: { rows: this.rows },
         disableClose: true,
       });
-    } else if (currentPage === 'taxi-list') {
+    } else if (currentPage === 'bus-driver') {
+      this.dialogRef = this.dialog.open(AddModalComponent, {
+        data: { rows: this.rows },
+        disableClose: true,
+      });
+    } else if (currentPage === 'bus-lines') {
+      this.dialogRef = this.dialog.open(AddModalComponent, {
+        data: { rows: this.rows },
+        disableClose: true,
+      });
+    } else if (currentPage === 'taxi') {
+      this.dialogRef = this.dialog.open(AddModalComponent, {
+        data: { rows: this.rows },
+        disableClose: true,
+      });
+    } else if (currentPage === 'taxi-driver') {
+      this.dialogRef = this.dialog.open(AddModalComponent, {
+        data: { rows: this.rows },
+        disableClose: true,
+      });
+    } else if (currentPage === 'clients') {
       this.dialogRef = this.dialog.open(AddModalComponent, {
         data: { rows: this.rows },
         disableClose: true,
       });
     }
-
+  
     if (this.dialogRef) {
       this.dialogRef.componentInstance.saveRow.subscribe((newRow: any) => {
         if (newRow) {
@@ -69,13 +89,13 @@ export class TableComponent implements OnInit {
           this.dialogRef.close();
         }
       });
-
+  
       this.dialogRef.componentInstance.cancel.subscribe(() => {
         this.dialogRef.close();
       });
     }
   }
-
+  
   addRow(newRow: any) {
     const newId = this.generateNewId();
     const newRowWithId = {
