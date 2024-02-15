@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ColumnMode, SortType } from '@swimlane/ngx-datatable';
 import { MatDialog } from '@angular/material/dialog';
@@ -17,54 +17,38 @@ export class TableComponent implements OnInit {
   SortType = SortType;
   title = 'angular-material-demo';
 
-  formBuilder = new FormBuilder();
-  rows: any[] = [
-    { id: 1, name: 'Austin', gender: 'Male', company: 'Swimlane' },
-    { id: 2, name: 'Dany', gender: 'Male', company: 'KFC' },
-    { id: 3, name: 'Molly', gender: 'Female', company: 'Burger King' },
-    { id: 4, name: 'Austin', gender: 'Male', company: 'Swimlane' },
-    { id: 5, name: 'Dany', gender: 'Male', company: 'KFC' },
-    { id: 6, name: 'Molly', gender: 'Female', company: 'Burger King' },
-    { id: 7, name: 'Austin', gender: 'Male', company: 'Swimlane' },
-    { id: 8, name: 'Dany', gender: 'Male', company: 'KFC' },
-    { id: 9, name: 'Molly', gender: 'Female', company: 'Burger King' },
-    { id: 10, name: 'Austin', gender: 'Male', company: 'Swimlane' },
-    { id: 11, name: 'Dany', gender: 'Male', company: 'KFC' },
-    { id: 12, name: 'Molly', gender: 'Female', company: 'Burger King' }
-  ];
-  columns = [
-    { prop: 'id' },
-    { prop: 'name' },
-    { name: 'Gender' },
-    { name: 'Company' },
-    { name: 'Actions' }
-  ];
-  filteredRows: any[] = [];
-  nameFilter = '';
+  // formBuilder = new FormBuilder();
+  @Input() rows: any[] = []; // Input property to receive rows data from parent component
+  @Input() columns: any[] = []; // Input property to receive columns data from parent component
+  @Input() filteredRows: any[] = []; // Input property to receive filtered rows data from parent component
+  @Input() nameFilter: string = ''; // Input property to receive name filter from parent component
+
+
+  constructor(private dialog: MatDialog, private formBuilder: FormBuilder) {}
   allRowsEditing = false;
 
-  constructor(private dialog: MatDialog) { }
+  // constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
     // Initialize rows with FormGroups
-    this.rows = this.initFormGroups(this.rows);
-    this.filteredRows = [...this.rows];
+    // this.rows = this.initFormGroups(this.rows);
+    // this.filteredRows = [...this.rows];
   }
 
-  initFormGroups(rows: any[]): FormGroup[] {
-    return rows.map(row => {
-      const form = this.formBuilder.group({
-        id: [row.id],
-        name: [row.name, Validators.required],
-        gender: [row.gender, Validators.required],
-        company: [row.company, Validators.required]
-      });
+  // initFormGroups(rows: any[]): FormGroup[] {
+  //   return rows.map(row => {
+  //     const form = this.formBuilder.group({
+  //       id: [row.id],
+  //       name: [row.name, Validators.required],
+  //       gender: [row.gender, Validators.required],
+  //       company: [row.company, Validators.required]
+  //     });
 
-      row.form = form;
+  //     row.form = form;
 
-      return row;
-    });
-  }
+  //     return row;
+  //   });
+  // }
 
 
   openAddRowModal() {

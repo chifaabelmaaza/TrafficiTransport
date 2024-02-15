@@ -24,6 +24,16 @@ import { BusListComponent } from './Pages/bus/bus-list/bus-list.component';
 import { TableComponent } from './component/table/table.component';
 import { AlertComponent } from './component/alert/alert.component';
 import { AddModalComponent } from './component/add-modal/add-modal.component';
+import { BusStationsComponent } from './Pages/bus/bus-stations/bus-stations.component';
+import { BusDriversComponent } from './Pages/bus/bus-drivers/bus-drivers.component';
+import { BusLinesComponent } from './Pages/bus/bus-lines/bus-lines.component';
+import { TaxiListComponent } from './Pages/taxi/taxi-list/taxi-list.component';
+import { TaxiDriversComponent } from './Pages/taxi/taxi-drivers/taxi-drivers.component';
+import { ClientListComponent } from './Pages/client/client-list/client-list.component';
+import { TravelsComponent } from './Pages/client/travels/travels.component';
+import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { MessagesComponent } from './Pages/messages/messages.component';
 
 
 @NgModule({
@@ -35,6 +45,16 @@ import { AddModalComponent } from './component/add-modal/add-modal.component';
     TableComponent,
     AlertComponent,
     AddModalComponent,
+    BusStationsComponent,
+    BusDriversComponent,
+    BusLinesComponent,
+    TaxiListComponent,
+    TaxiDriversComponent,
+    ClientListComponent,
+    TravelsComponent,
+    DashboardComponent,
+    LoginComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
