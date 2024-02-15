@@ -1,23 +1,40 @@
 <div class="modal-container">
-  <h2>Add Row</h2>
+  <h2>Add Bus</h2>
   <form [formGroup]="form" class="form-box">
     <mat-form-field appearance="fill">
-      <mat-label>Name:</mat-label>
-      <input matInput type="text" formControlName="name" />
+      <mat-label>Matricule:</mat-label>
+      <input matInput type="text" formControlName="Matricule" placeholder="Enter Matricule"/>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Gender:</mat-label>
-      <input matInput type="text" formControlName="gender" />
+      <mat-label>Capacite:</mat-label>
+      <input matInput type="text" formControlName="Capacite" placeholder="Enter Capacite"/>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Company:</mat-label>
-      <input matInput type="text" formControlName="company" />
+      <mat-label>Direction:</mat-label>
+      <input matInput type="text" formControlName="Direction" placeholder="Enter Direction"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Disponibilite:</mat-label>
+      <input matInput type="text" formControlName="Disponibilite" placeholder="Enter Disponibilite"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Driver:</mat-label>
+      <input matInput type="text" formControlName="Driver" placeholder="Enter Driver"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Line:</mat-label>
+      <mat-select formControlName="Line" placeholder="Select Line">
+        <mat-option *ngFor="let line of lines" [value]="line">{{ line }}</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <div class="actions">
-      <button mat-raised-button  (click)="save()" class="save-button">Save</button>
+      <button mat-raised-button (click)="save()" class="save-button">Save</button>
       <button mat-button (click)="cancelForm()" class="cancel-button">Cancel</button>
     </div>
   </form>
