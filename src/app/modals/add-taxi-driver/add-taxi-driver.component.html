@@ -1,1 +1,31 @@
-<p>add-taxi-driver works!</p>
+<div class="modal-container">
+    <h2>Add Bus</h2>
+    <form [formGroup]="form" class="form-box">
+      <mat-form-field appearance="fill">
+        <mat-label>Family Name:</mat-label>
+        <input matInput type="text" formControlName="Nom" placeholder="Enter Family Name"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>First Name:</mat-label>
+        <input matInput type="text" formControlName="Prenom" placeholder="Enter First Name"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Phone Number:</mat-label>
+        <input matInput type="text" formControlName="Num" placeholder="Enter Phone Number"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Email:</mat-label>
+        <input matInput type="text" formControlName="Email" placeholder="Enter Email"/>
+      </mat-form-field>
+  
+     
+  
+      <div class="actions">
+        <button mat-raised-button (click)="save()" class="save-button">Save</button>
+        <button mat-button (click)="cancelForm()" class="cancel-button">Cancel</button>
+      </div>
+    </form>
+  </div>

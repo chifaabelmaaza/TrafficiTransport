@@ -1,1 +1,25 @@
-<p>add-bus-station works!</p>
+<div class="modal-container">
+    <h2>Add Bus Station</h2>
+    <form [formGroup]="form" class="form-box">
+      <mat-form-field appearance="fill">
+        <mat-label>Name Station:</mat-label>
+        <input matInput type="text" formControlName="Nom" placeholder="Enter Name Sation"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>North Coordinate:</mat-label>
+        <input matInput type="number" formControlName="Cord_N" placeholder="Enter North coordinate"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>West coordinate:</mat-label>
+        <input matInput type="number" formControlName="Cord_W" placeholder="Enter west coordinate"/>
+      </mat-form-field>
+  
+  
+      <div class="actions">
+        <button mat-raised-button (click)="save()" class="save-button">Save</button>
+        <button mat-button (click)="cancelForm()" class="cancel-button">Cancel</button>
+      </div>
+    </form>
+  </div>

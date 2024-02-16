@@ -69,6 +69,7 @@ import { AddTaxiDriverComponent } from './modals/add-taxi-driver/add-taxi-driver
     AddBusDriverComponent,
     AddTaxiComponent,
     AddTaxiDriverComponent,
+   
   ],
   imports: [
     BrowserModule,

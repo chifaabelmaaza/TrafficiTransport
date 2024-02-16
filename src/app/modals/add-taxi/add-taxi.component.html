@@ -1,1 +1,35 @@
-<p>add-taxi works!</p>
+<div class="modal-container">
+    <h2>Add Taxi</h2>
+    <form [formGroup]="form" class="form-box">
+      <mat-form-field appearance="fill">
+        <mat-label>Matricule:</mat-label>
+        <input matInput type="text" formControlName="Matricule" placeholder="Enter Matricule"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Marque:</mat-label>
+        <input matInput type="text" formControlName="Marque" placeholder="Enter Marque"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Model:</mat-label>
+        <input matInput type="text" formControlName="Model" placeholder="Enter Model"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Category:</mat-label>
+        <input matInput type="text" formControlName="Category" placeholder="Enter Category"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Accreditation number:</mat-label>
+        <input matInput type="text" formControlName="Num_Agrement" placeholder="Enter Accreditation number"/>
+      </mat-form-field>
+  
+  
+      <div class="actions">
+        <button mat-raised-button (click)="save()" class="save-button">Save</button>
+        <button mat-button (click)="cancelForm()" class="cancel-button">Cancel</button>
+      </div>
+    </form>
+  </div>

@@ -1,1 +1,35 @@
-<p>add-bus-line works!</p>
+<div class="modal-container">
+    <h2>Add Ligne</h2>
+    <form [formGroup]="form" class="form-box">
+      <mat-form-field appearance="fill">
+        <mat-label>Ligne Number:</mat-label>
+        <input matInput type="text" formControlName="Num_Ligne" placeholder="Enter Ligne Number"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>travel time:</mat-label>
+        <input matInput type="number" formControlName="Duree_traj" placeholder="Enter travel time"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Departure time :</mat-label>
+        <input matInput type="datetime" formControlName="Horaire_D" placeholder="Enter departure time
+        "/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>End time:</mat-label>
+        <input matInput type="datetime" formControlName="Horaire_F" placeholder="Enter End time"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Stations:</mat-label>
+        <input matInput type="text" formControlName="Stations" placeholder="Enter Stations"/>
+      </mat-form-field>
+  
+      <div class="actions">
+        <button mat-raised-button (click)="save()" class="save-button">Save</button>
+        <button mat-button (click)="cancelForm()" class="cancel-button">Cancel</button>
+      </div>
+    </form>
+  </div>
