@@ -6,10 +6,11 @@
     <div class="act-cnt">
       <input type="text" id="nameFilter" [(ngModel)]="nameFilter" (input)="applyFilter()"  placeholder="Search ..."/>
     </div>
-    <button class="add-new" (click)="openAddRowModal()">
+    <button *ngIf="isAddButtonVisible" class="add-new" (click)="openAddRowModal()" >
       <mat-icon>add</mat-icon>
       <a>New</a>
     </button>
+    <div *ngIf="isDivVisible"></div>
   </div>
   <div class="table-cnt">
 
