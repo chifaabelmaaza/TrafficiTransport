@@ -22,6 +22,8 @@ export class TableComponent implements OnInit {
   @Input() columns: any[] = [];
   @Input() filteredRows: any[] = [];
   @Input() nameFilter: string = '';
+  @Input() isAddButtonVisible: boolean = true;
+  @Input() isDivVisible: boolean = false;
 
   dialogRef!: MatDialogRef<any>; // Definite assignment assertion
 
