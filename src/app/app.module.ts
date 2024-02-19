@@ -33,7 +33,6 @@ import { TaxiListComponent } from './Pages/taxi/taxi-list/taxi-list.component';
 import { TaxiDriversComponent } from './Pages/taxi/taxi-drivers/taxi-drivers.component';
 import { ClientListComponent } from './Pages/client/client-list/client-list.component';
 import { TravelsComponent } from './Pages/client/travels/travels.component';
-import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { MessagesComponent } from './Pages/messages/messages.component';
 import { AddBusComponent } from './modals/add-bus/add-bus.component';
@@ -42,7 +41,12 @@ import { AddBusLineComponent } from './modals/add-bus-line/add-bus-line.componen
 import { AddBusDriverComponent } from './modals/add-bus-driver/add-bus-driver.component';
 import { AddTaxiComponent } from './modals/add-taxi/add-taxi.component';
 import { AddTaxiDriverComponent } from './modals/add-taxi-driver/add-taxi-driver.component';
-
+import { TopWidgetComponent } from './Pages/Dashboard/top-widget/top-widget.component';
+import { TravelsPerMonthComponent } from './Pages/Dashboard/travels-per-month/travels-per-month.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DashboardTotalComponent } from './Pages/Dashboard/dashboard-total/dashboard-total.component';
+import { NgApexchartsModule } from "ng-apexcharts";
+import ApexCharts from 'apexcharts'
 
 @NgModule({
   declarations: [
@@ -60,7 +64,6 @@ import { AddTaxiDriverComponent } from './modals/add-taxi-driver/add-taxi-driver
     TaxiDriversComponent,
     ClientListComponent,
     TravelsComponent,
-    DashboardComponent,
     LoginComponent,
     MessagesComponent,
     AddBusComponent,
@@ -69,9 +72,14 @@ import { AddTaxiDriverComponent } from './modals/add-taxi-driver/add-taxi-driver
     AddBusDriverComponent,
     AddTaxiComponent,
     AddTaxiDriverComponent,
+    TopWidgetComponent,
+    TravelsPerMonthComponent,
+    DashboardTotalComponent,
    
   ],
   imports: [
+    NgApexchartsModule,
+    FontAwesomeModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
