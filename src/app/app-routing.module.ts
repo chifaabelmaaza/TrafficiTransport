@@ -8,12 +8,12 @@ import { TaxiListComponent } from './Pages/taxi/taxi-list/taxi-list.component';
 import { TaxiDriversComponent } from './Pages/taxi/taxi-drivers/taxi-drivers.component';
 import { ClientListComponent } from './Pages/client/client-list/client-list.component';
 import { TravelsComponent } from './Pages/client/travels/travels.component';
-import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { MessagesComponent } from './Pages/messages/messages.component';
+import { DashboardTotalComponent } from './Pages/Dashboard/dashboard-total/dashboard-total.component';
 
 const routes: Routes = [
   { path: '', component:  BusListComponent},
-  { path: 'dashboard', component:  DashboardComponent},
+  { path: 'dashboard', component:  DashboardTotalComponent},
   { path: 'messages', component:  MessagesComponent},
   { path: 'bus', component:  BusListComponent },
   { path: 'bus-station', component: BusStationsComponent },
